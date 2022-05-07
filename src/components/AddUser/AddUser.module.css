@@ -1,0 +1,63 @@
+.container {
+  padding: 1rem;
+}
+
+.container h4 {
+  padding-left: 1rem;
+}
+
+.form_container {
+  padding-top: 1rem;
+  height: calc(100vh - 130px);
+}
+
+.form_content {
+  width: 50%;
+  margin: auto;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  /* padding-top: 3.5rem; */
+}
+
+.input_container {
+  display: flex;
+  align-items: center;
+}
+
+.input_container label {
+  width: 25%;
+  /* border: 1px solid red; */
+  display: block;
+}
+
+.input_container input,
+.input_container select {
+  width: 75%;
+  /* border: 1px solid red; */
+  /* display: block; */
+  /* height: 50px; */
+
+  padding: 0.7rem 1.2rem;
+  background-color: #ededed;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+.input_container button {
+  width: 75%;
+  margin-left: auto;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  background-color: #a1e0ff;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.input_outer_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
