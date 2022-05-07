@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
+import moment from 'moment';
 
 import styles from './Layout.module.css';
 import { logo, addUser, users, weather, userIcon } from '../../assets/img';
 import Card from '../Card/Card';
 
 const Layout = () => {
+  const [dateTime, setDateTime] = useState(new Date());
+
+  const refreshDateTime = () => {
+    setDateTime(new Date());
+  };
+
+  useEffect(() => {
+    const timer = setInterval(refreshDateTime, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   const memuList = [
     {
       label: 'Add User',
@@ -58,7 +73,8 @@ const Layout = () => {
         <div className={styles.header}>
           <Card height='100%' width='100%'>
             <div className={styles.header_content}>
-              <div>Thu 19 Aug 12:00 AM</div>
+              <div>{moment(dateTime).format('ddd DD MMM hh:mm A')}</div>
+
               <div className={styles.profile}>
                 <h5>Welcome Jhon</h5> <img src={userIcon} alt='user' />
               </div>

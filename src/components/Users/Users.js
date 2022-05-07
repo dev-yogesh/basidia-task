@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Card from '../Card/Card';
 import styles from './Users.module.css';
@@ -6,7 +6,16 @@ import styles from './Users.module.css';
 import UserCardView from '../UserCardView/UserCardView';
 import UserListView from '../UserListView/UserListView';
 
-const Users = () => {
+import { getUsers } from './UserActions';
+
+const Users = ({ getUsersData, usersList }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    getUsersData(searchQuery);
+    //eslint-disable-next-line
+  }, [searchQuery]);
+
   return (
     <div className={styles.container}>
       <h4>Users</h4>
@@ -21,6 +30,8 @@ const Users = () => {
                   type='text'
                   name='search'
                   placeholder='Search user by name...'
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
             </div>
@@ -28,22 +39,30 @@ const Users = () => {
             <div className={styles.card_section}>
               <h5>Card View</h5>
               <div className={styles.card_view_container}>
-                <UserCardView />
-                <UserCardView />
-                <UserCardView />
-                <UserCardView />
-                <UserCardView />
+                {usersList?.length > 0 ? (
+                  <>
+                    {usersList.map((user) => (
+                      <UserCardView key={user.email} user={user} />
+                    ))}
+                  </>
+                ) : (
+                  <h5>No records found</h5>
+                )}
               </div>
             </div>
 
             <div className={styles.card_section}>
               <h5>List View</h5>
               <div className={styles.list_view_container}>
-                <UserListView />
-                <UserListView />
-                <UserListView />
-                <UserListView />
-                <UserListView />
+                {usersList?.length > 0 ? (
+                  <>
+                    {usersList.map((user) => (
+                      <UserListView key={user.email} user={user} />
+                    ))}
+                  </>
+                ) : (
+                  <h5>No records found</h5>
+                )}
               </div>
             </div>
           </div>
@@ -54,22 +73,16 @@ const Users = () => {
 };
 
 const mapStateToProps = (state) => {
-  console.log('state', state);
-  return {};
+  return {
+    usersList: state?.users?.users,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // addAdmin: data => {
-    //     return dispatch(addAdminRequest(data)).then(
-    //         res => {
-    //             return Promise.resolve(res);
-    //         },
-    //         error => {
-    //             return Promise.reject(error);
-    //         }
-    //     );
-    // },
+    getUsersData: (query) => {
+      return dispatch(getUsers(query));
+    },
   };
 };
 
