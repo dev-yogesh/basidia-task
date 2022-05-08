@@ -1,0 +1,14 @@
+:root {
+  --body_bg: #ebf0f4;
+  --card_bg: #ffffff;
+  --input_bg: #ededed;
+
+  --primary: #ffffff;
+  --secondary: #a1e0ff;
+
+  --text_primary: #000000;
+  --text_secondary: #808080;
+  --text_input: #646464;
+
+  --error: #ffa2a2;
+}

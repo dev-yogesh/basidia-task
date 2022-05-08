@@ -1,0 +1,4 @@
+.card {
+  background: var(--card_bg);
+  border-radius: 30px;
+}

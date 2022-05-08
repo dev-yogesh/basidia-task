@@ -1,0 +1,87 @@
+.container h4 {
+  padding-left: 1rem;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  padding-bottom: 1rem;
+}
+
+.inner_container {
+  min-height: calc(100vh - (100px + 8rem));
+}
+
+.content_container {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content_container h5 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--text_secondary);
+}
+
+.input_container {
+  padding-top: 1rem;
+}
+
+.input_container input {
+  width: 600px;
+  padding: 12px 26px;
+  background-color: var(--input_bg);
+  color: var(--text_input);
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  height: 50px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.search_container {
+  background-color: var(--input_bg);
+  width: 600px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.search_container img {
+  height: 20px;
+  width: 20px;
+  margin-right: 1rem;
+}
+
+.card_view_container {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.list_view_container {
+  padding-top: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .inner_container {
+    min-height: fit-content;
+  }
+
+  .input_container input {
+    width: 100%;
+  }
+
+  .search_container {
+    width: 100%;
+  }
+
+  .card_view_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

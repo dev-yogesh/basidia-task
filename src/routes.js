@@ -1,9 +1,14 @@
 import { Navigate } from 'react-router-dom';
 
-import Layout from './components/Layout/Layout';
-import AddUser from './components/AddUser/AddUser';
-import Users from './components/Users/Users';
-import Weather from './components/Weather/Weather';
+import Layout from './modules/dashboard/components/Layout/Layout';
+import AddUser from './modules/addUser/components/AddUser/AddUser';
+import Users from './modules/users/components/Users/Users';
+import Weather from './modules/weather/components/Weather/Weather';
+
+// import Layout from './components/Layout/Layout';
+// import AddUser from './components/AddUser/AddUser';
+// import Users from './components/Users/Users';
+// import Weather from './components/Weather/Weather';
 
 export const appRoutes = [
   {
@@ -16,5 +21,5 @@ export const appRoutes = [
       { path: 'weather', element: <Weather /> },
     ],
   },
-//   { path: '*', element: <Error code={400} message='Page not found' /> },
+  //   { path: '*', element: <Error code={400} message='Page not found' /> },
 ];

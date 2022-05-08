@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import users from './components/Users/UsersReducer';
-import weather from './components/Weather/WeatherReducer';
+import users from './modules/users/usersReducer';
+import weather from './modules/weather/weatherReducer';
+import utility from './utility/utilityReducer';
 
 export default combineReducers({
   users,
   weather,
+  utility,
 });

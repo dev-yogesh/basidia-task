@@ -1,5 +1,10 @@
-export { default as logo } from './Logo.png';
+export { default as appLogo } from './logo.png';
 export { default as addUser } from './add-user.png';
+export { default as addUserWhite } from './add-user-white.png';
 export { default as users } from './users.png';
+export { default as usersWhite } from './users-white.png';
 export { default as weather } from './weather.png';
+export { default as weatherWhite } from './weather-white.png';
 export { default as userIcon } from './user-icon.png';
+export { default as menuIcon } from './menu.png';
+export { default as searchIcon } from './search.png';

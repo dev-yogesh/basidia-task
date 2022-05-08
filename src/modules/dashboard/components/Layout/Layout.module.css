@@ -1,0 +1,22 @@
+.dashboard {
+  margin-left: 300px;
+}
+
+.dashboard main {
+  padding: 1.5rem;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: calc(100px + 4rem);
+}
+
+@media only screen and (max-width: 768px) {
+  .dashboard {
+    margin-left: 0px;
+  }
+
+  .dashboard main {
+    padding: 1rem;
+    padding-top: calc(50px + 3rem + 50px);
+  }
+}
