@@ -1,11 +1,16 @@
 import React from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
 import { STATE_LIST } from '../../../../utility/constants';
 import Card from '../../../../utility/components/Card/Card';
 import { setDataToLocalStorage } from '../../../../utility/utility';
 import styles from './AddUser.module.css';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
 
+/**
+ * function to render add-user form
+ * @returns
+ */
 const AddUser = () => {
   const validationSchema = Yup.object().shape({
     username: Yup.string().required('Username is required'),

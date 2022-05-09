@@ -4,6 +4,12 @@ const initialState = {
   users: null,
 };
 
+/**
+ * users reducer function to update state based on action type
+ * @param {*} state: state
+ * @param {*} action: action
+ * @returns
+ */
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_USERS: {

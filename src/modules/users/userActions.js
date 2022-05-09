@@ -2,6 +2,11 @@ import { getDataFromLocalStorage } from '../../utility/utility';
 
 export const GET_USERS = 'GET_USERS';
 
+/**
+ * action creater function to get users
+ * @param {*} query: query string
+ * @returns
+ */
 export const getUsers = (query) => {
   const usersData = getDataFromLocalStorage();
   let filteredUsers;

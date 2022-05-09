@@ -7,6 +7,10 @@ import MobileHeader from '../MobileHeader/MobileHeader';
 import MobileSidebar from '../MobileSidebar/MobileSidebar';
 import styles from './Layout.module.css';
 
+/**
+ * function to render application dashboad layout
+ * @returns
+ */
 const Layout = () => {
   return (
     <div>

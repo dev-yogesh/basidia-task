@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 
+/**
+ * function to render current date and time
+ * @returns
+ */
 export const useDateTime = () => {
   const [dateTime, setDateTime] = useState(new Date());
 

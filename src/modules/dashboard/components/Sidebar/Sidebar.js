@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Card from '../../../../utility/components/Card/Card';
 import {
   appLogo,
   addUser,
@@ -11,8 +10,13 @@ import {
   usersWhite,
   weatherWhite,
 } from '../../../../assets/img';
+import Card from '../../../../utility/components/Card/Card';
 import styles from './Sidebar.module.css';
 
+/**
+ * function to render sidebar component
+ * @returns
+ */
 const Sidebar = () => {
   const [path, setPath] = useState(window.location.pathname);
 

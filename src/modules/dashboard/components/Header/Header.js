@@ -5,8 +5,13 @@ import { userIcon } from '../../../../assets/img';
 import { useDateTime } from '../../../../utility/hooks/useDateTime';
 import styles from './Header.module.css';
 
+/**
+ * function to render header component
+ * @returns
+ */
 const Header = () => {
   const [dateTime] = useDateTime();
+
   return (
     <section className={styles.header}>
       <Card>

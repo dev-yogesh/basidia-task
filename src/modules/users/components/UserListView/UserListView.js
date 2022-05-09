@@ -4,6 +4,11 @@ import { userIcon, menuIcon } from '../../../../assets/img';
 import { getAge } from '../../../../utility/utility';
 import styles from './UserListView.module.css';
 
+/**
+ * function to render user list view component
+ * @param {*} user: user details
+ * @returns
+ */
 const UserListView = ({ user }) => {
   return (
     <div className={styles.card}>
@@ -17,6 +22,7 @@ const UserListView = ({ user }) => {
           </h5>
         </div>
       </div>
+
       <div>
         <img src={menuIcon} alt='menuIcon' />
       </div>

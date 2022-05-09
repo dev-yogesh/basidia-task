@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { getWeatherData } from './weatherActions';
 
+/**
+ * async action creator function to get weather data
+ * @param {*} state: state
+ * @returns
+ */
+
 export const getWeatherDataRequest = (state) => {
   return async (dispatch) => {
     try {

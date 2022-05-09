@@ -6,6 +6,12 @@ import Card from '../../../../utility/components/Card/Card';
 import { getWeatherDataRequest } from '../../weatherAsyncActions';
 import styles from './Weather.module.css';
 
+/**
+ * function to render weather component
+ * @param {*} getWeatherData: function to get weather data
+ * @param {*} weatherData: weather data
+ * @returns
+ */
 const Weather = ({ getWeatherData, weatherData }) => {
   const [state, setState] = useState('Karnataka');
 
@@ -77,12 +83,22 @@ const Weather = ({ getWeatherData, weatherData }) => {
   );
 };
 
+/**
+ * function to map redux state to component prop
+ * @param {*} state: state
+ * @returns
+ */
 const mapStateToProps = (state) => {
   return {
     weatherData: state?.weather?.weatherData,
   };
 };
 
+/**
+ * function to map action creators to component prop
+ * @param {*} dispatch: function to dispatch action
+ * @returns
+ */
 const mapDispatchToProps = (dispatch) => {
   return {
     getWeatherData: async (state) => {

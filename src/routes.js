@@ -5,11 +5,6 @@ import AddUser from './modules/addUser/components/AddUser/AddUser';
 import Users from './modules/users/components/Users/Users';
 import Weather from './modules/weather/components/Weather/Weather';
 
-// import Layout from './components/Layout/Layout';
-// import AddUser from './components/AddUser/AddUser';
-// import Users from './components/Users/Users';
-// import Weather from './components/Weather/Weather';
-
 export const appRoutes = [
   {
     path: '/',
@@ -21,5 +16,4 @@ export const appRoutes = [
       { path: 'weather', element: <Weather /> },
     ],
   },
-  //   { path: '*', element: <Error code={400} message='Page not found' /> },
 ];

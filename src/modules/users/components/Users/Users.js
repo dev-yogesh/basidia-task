@@ -8,6 +8,12 @@ import UserListView from '../UserListView/UserListView';
 import { getUsers } from '../../userActions';
 import styles from './Users.module.css';
 
+/**
+ * function to render users component
+ * @param {*} getUsersData: function to get users data
+ * @param {*} usersList: users list
+ * @returns
+ */
 const Users = ({ getUsersData, usersList }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -75,12 +81,23 @@ const Users = ({ getUsersData, usersList }) => {
   );
 };
 
+/**
+ * function to map redux state to component prop
+ * @param {*} state: state
+ * @returns
+ */
+
 const mapStateToProps = (state) => {
   return {
     usersList: state?.users?.users,
   };
 };
 
+/**
+ * function to map action creators to component prop
+ * @param {*} dispatch: function to dispatch action
+ * @returns
+ */
 const mapDispatchToProps = (dispatch) => {
   return {
     getUsersData: (query) => {

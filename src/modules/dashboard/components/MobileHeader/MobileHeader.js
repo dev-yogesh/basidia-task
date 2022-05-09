@@ -5,6 +5,12 @@ import { appLogo } from '../../../../assets/img';
 import { toggleDrawer } from '../../../../utility/utilityActions';
 import styles from './MobileHeader.module.css';
 
+/**
+ * function to render mobile header component
+ * @param {*} toggleDrawerState: function to toggle drawer state
+ * @param {*} open: boolean for drawer state
+ * @returns
+ */
 const MobileHeader = ({ toggleDrawerState, open }) => {
   return (
     <section className={styles.mobile_header}>
@@ -14,7 +20,7 @@ const MobileHeader = ({ toggleDrawerState, open }) => {
         </div>
 
         <div
-          className={styles.container}
+          className={`${styles.container} ${open ? styles.change : ''}`}
           onClick={(e) => toggleDrawerState(!open)}
         >
           <div className={styles.bar1}></div>
@@ -26,12 +32,22 @@ const MobileHeader = ({ toggleDrawerState, open }) => {
   );
 };
 
+/**
+ * function to map redux state to component prop
+ * @param {*} state: state
+ * @returns
+ */
 const mapStateToProps = (state) => {
   return {
     open: state?.utility?.open,
   };
 };
 
+/**
+ * function to map action creators to component prop
+ * @param {*} dispatch: function to dispatch action
+ * @returns
+ */
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleDrawerState: (open) => {
